@@ -2,24 +2,15 @@ public class Programmeur {
     private int id;
     private String nom;
     private String prenom;
-    private String adresse;
-    private String pseudo;
-    private String hobby;
-    private String responsable;
     private int anNaissance;
     private double salaire;
     private double prime;
 
     // Constructor
-    public Programmeur(int id, String nom, String prenom, String adresse, String pseudo, String hobby,
-                       String responsable, int anNaissance, double salaire, double prime) {
+    public Programmeur(int id, String nom, String prenom, int anNaissance, double salaire, double prime) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
-        this.adresse = adresse;
-        this.pseudo = pseudo;
-        this.hobby = hobby;
-        this.responsable = responsable;
         this.anNaissance = anNaissance;
         this.salaire = salaire;
         this.prime = prime;
@@ -34,18 +25,6 @@ public class Programmeur {
 
     public String getPrenom() { return prenom; }
     public void setPrenom(String prenom) { this.prenom = prenom; }
-
-    public String getAdresse() { return adresse; }
-    public void setAdresse(String adresse) { this.adresse = adresse; }
-
-    public String getPseudo() { return pseudo; }
-    public void setPseudo(String pseudo) { this.pseudo = pseudo; }
-
-    public String getHobby() { return hobby; }
-    public void setHobby(String hobby) { this.hobby = hobby; }
-
-    public String getResponsable() { return responsable; }
-    public void setResponsable(String responsable) { this.responsable = responsable; }
 
     public int getAnNaissance() { return anNaissance; }
     public void setAnNaissance(int anNaissance) { this.anNaissance = anNaissance; }
@@ -62,13 +41,10 @@ public class Programmeur {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", pseudo='" + pseudo + '\'' +
-                ", hobby='" + hobby + '\'' +
-                ", responsable='" + responsable + '\'' +
                 ", anNaissance=" + anNaissance +
                 ", salaire=" + salaire +
                 ", prime=" + prime +
                 '}';
     }
 }
+
