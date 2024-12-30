@@ -21,19 +21,19 @@ public class Caller {
         System.out.println(option);
         switch (option) {
             case 1:
-                showAllProgrammers();
+                this.actionsBDD.showAllProgrammers();
                 break;
             case 2:
-                showProgrammerInput();
+                this.actionsBDD.showProgrammerInput();
                 break;
             case 3:
-                deleteProgrammer();
+                this.actionsBDD.deleteProgrammer();
                 break;
             case 4:
-                addProgrammerInput();
+                this.actionsBDD.addProgrammerInput();
                 break;
             case 5:
-                modifySalaryInput();
+                this.actionsBDD.modifySalaryInput();
                 break;
             case 6:
                 this.terminal.printMessage("Exiting...");
