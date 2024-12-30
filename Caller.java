@@ -1,11 +1,12 @@
 public class Caller {
 
-    //private DB db;
+    private ActionsBDD actionsBDD;
     public Terminal terminal;
 
-    public Caller(Terminal terminal) {
+    public Caller(Terminal terminal, ActionsBDD actionsBDD) {
         System.out.println("Caller init good!");
         this.terminal = terminal;
+        this.actionsBDD = actionsBDD;
         //this.db = new DB();  // Initialize DB
     }
 
@@ -44,56 +45,4 @@ public class Caller {
         }
     }
 
-    private void showAllProgrammers() {
-        // Get all programmers from DB and display them
-       // db.getAllProgrammers().forEach(programmer -> this.terminal.printMessage(programmer.toString()));
-    }
-
-    private void showProgrammerInput() {
-        int id = this.terminal.getIntInput("Entrez l'ID du programmeur à afficher : ");
-        
-        // Get the programmer from DB
-        //Programmer programmer = db.getProgrammerById(id);
-        /*if (programmer != null) {
-            this.terminal.printMessage(programmer.toString());
-        } else {
-            this.terminal.printMessage("Aucun programmeur trouvé avec l'ID : " + id);
-        }*/
-    }
-
-    private void deleteProgrammer() {
-        int id = this.terminal.getIntInput("Entrez l'ID du programmeur à supprimer : ");
-        
-        // Delete the programmer from DB
-        //boolean success = db.deleteProgrammerById(id);
-        boolean success = true;
-        if (success) {
-            this.terminal.printMessage("Le programmeur avec l'ID " + id + " a été supprimé.");
-        } else {
-            this.terminal.printMessage("Aucun programmeur trouvé avec l'ID : " + id);
-        }
-    }
-
-    private void addProgrammerInput() {
-        String name = this.terminal.getStringInput("Entrez le nom du programmeur : ");
-        String skillSet = this.terminal.getStringInput("Entrez les compétences du programmeur : ");
-        
-        // Add the programmer to the DB
-        //db.addProgrammer(new Programmer(name, skillSet));
-        this.terminal.printMessage("Programmeur ajouté avec succès !");
-    }
-
-    private void modifySalaryInput() {
-        int id = this.terminal.getIntInput("Entrez l'ID du programmeur dont vous souhaitez modifier le salaire : ");
-        double newSalary = this.terminal.getIntInput("Entrez le nouveau salaire du programmeur : ");
-        
-        // Modify the salary of the programmer in the DB
-        //boolean success = db.modifySalary(id, newSalary);
-        boolean success = true;
-        if (success) {
-            this.terminal.printMessage("Le salaire du programmeur avec l'ID " + id + " a été mis à jour.");
-        } else {
-            this.terminal.printMessage("Aucun programmeur trouvé avec l'ID : " + id);
-        }
-    }
 }
