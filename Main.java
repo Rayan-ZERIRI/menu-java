@@ -4,6 +4,5 @@ public class Main {
         Terminal terminal = new Terminal(); 
         Caller caller = new Caller(terminal,actionsBDD);
         caller.start();
-        menu.afficherMenu();
     }
 }
