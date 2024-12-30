@@ -1,9 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         ActionsBDD actionsBDD = new ActionsBDDImpl();
-        Menu menu = new Menu(actionsBDD);
         Terminal terminal = new Terminal(); 
-        Caller caller = new Caller(terminal);
+        Caller caller = new Caller(terminal,actionsBDD);
         caller.start();
         menu.afficherMenu();
     }
