@@ -65,14 +65,19 @@ public class ActionsBDDImpl implements ActionsBDD {
 
 
     @Override 
-    public boolean ajouterProgrammeurInput(String nom, String prenom, int anNaissance, double salaire, double prime) {
-        String query = "INSERT INTO Programmeur (nom, prenom, anNaissance, salaire, prime) VALUES (?, ?, ?, ?, ?)";
+    public boolean ajouterProgrammeurInput(Programmeur p) {
+        String query = "INSERT INTO Programmeur (id, nom, prenom, adresse, pseudo, hobby, responsable, anNaissance, salaire, prime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, nom);
-            pstmt.setString(2, prenom);
-            pstmt.setInt(3, anNaissance);
-            pstmt.setDouble(4, salaire);
-            pstmt.setDouble(5, prime);
+            pstmt.setInt(1, p.getId());
+            pstmt.setString(2, p.getNom());
+            pstmt.setString(3, p.getPrenom());
+            pstmt.setString(4, p.getAdresse());
+            pstmt.setString(5, p.getPseudo());
+            pstmt.setString(6, p.getHobby());
+            pstmt.setString(7, p.getResponsable());
+            pstmt.setInt(8, p.getAnNaissance());
+            pstmt.setDouble(9, p.getSalaire());
+            pstmt.setDouble(10, p.getPrime());
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Programmeur ajouté avec succès.");
@@ -113,4 +118,3 @@ public class ActionsBDDImpl implements ActionsBDD {
         System.exit(0);
     }
 }
-
