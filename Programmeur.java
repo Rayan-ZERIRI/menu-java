@@ -58,17 +58,16 @@ public class Programmeur {
 
     @Override
     public String toString() {
-        return "Programmeur{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", pseudo='" + pseudo + '\'' +
-                ", hobby='" + hobby + '\'' +
-                ", responsable='" + responsable + '\'' +
-                ", anNaissance=" + anNaissance +
-                ", salaire=" + salaire +
-                ", prime=" + prime +
-                '}';
+        return "Id : " + this.getId() + "\n" +
+                "Nom : " + this.getNom() + "\n" +
+                "Prénom : " + this.getPrenom() + "\n" +
+                "Adresse : " + this.getAdresse() + "\n" +
+                "Pseudo" + this.getPseudo() + "\n" +
+                "Responsable : " + this.getResponsable() + "\n" +
+                "Hobby : " + this.getHobby() + "\n" +
+                "Naissance : " + this.getAnNaissance() + "\n" +
+                "Salaire : " + this.getSalaire() + "\n" +
+                "Prime : " + this.getPrime() + "\n" +
+                "--------------------";
     }
 }
